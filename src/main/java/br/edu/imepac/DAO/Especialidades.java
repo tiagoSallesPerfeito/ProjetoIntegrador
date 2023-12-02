@@ -61,6 +61,23 @@ public class Especialidades {
         }
     }
     
+     public ResultSet listarRegistros(String strOrdem){
+        String strComandoSQL;        
+        try { 
+            if (strOrdem == "CÓDIGO"){
+                strComandoSQL = "SELECT * FROM especialidades ORDER BY Codigo_Especialidade";
+            }else{
+                strComandoSQL = "SELECT * FROM especialidades ORDER BY Descricao_Especialidade";
+            }
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistro = psComando.executeQuery();
+            return rsRegistro;
+        }catch (Exception erro){
+            erro.printStackTrace(); 
+            return null;
+        } 
+     }
+    
     
     
     
