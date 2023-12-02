@@ -43,4 +43,61 @@ public class Conversao {
             return "null";
         }
     }
+    
+    public String DateToString(Date dtData){
+        String strData;
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
+        
+        try {
+            strData = formatoData.format(dtData);
+            return strData;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return null;
+        }      
+    }
+    
+    public int diaData(Date dtData){
+         if(dtData != null){
+             int intDia;
+             Calendar calendario = Calendar.getInstance();
+             
+             calendario.setTime(dtData);             
+             intDia = calendario.get(Calendar.DAY_OF_MONTH);
+             return intDia;
+         }else
+             return 0;
+    }
+    
+    public int mesData(Date dtData){
+         if(dtData != null){
+             int intMes;
+             Calendar calendario = Calendar.getInstance();
+             
+             calendario.setTime(dtData);             
+             intMes = calendario.get(Calendar.MONTH);
+             return intMes;
+         }else
+             return 0;
+    }    
+        
+    public int anoData(Date dtData){
+         if(dtData != null){
+             int intAno;
+             Calendar calendario = Calendar.getInstance();
+             
+             calendario.setTime(dtData);             
+             intAno = calendario.get(Calendar.YEAR);
+             return intAno;
+         }else
+             return 0;
+    }
+    
+    
+
+    
+
+    
+    
+    
 }
