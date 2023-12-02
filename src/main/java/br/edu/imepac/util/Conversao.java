@@ -26,7 +26,7 @@ public class Conversao {
         }
     }
     
-    public String dataConvertida(Date dtData){
+    public String dataInvertida(Date dtData){
         if(dtData != null){
             int intDia, intMes, intAno;
             String strData;
@@ -92,12 +92,4 @@ public class Conversao {
          }else
              return 0;
     }
-    
-    
-
-    
-
-    
-    
-    
 }

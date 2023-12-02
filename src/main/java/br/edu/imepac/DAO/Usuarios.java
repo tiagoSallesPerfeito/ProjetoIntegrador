@@ -128,19 +128,5 @@ public class Usuarios {
             erro.printStackTrace(); 
             return false;
         }
-        
-        
     }
-
-    
-
-
-
-
-
-
-
-
-
-
 }
