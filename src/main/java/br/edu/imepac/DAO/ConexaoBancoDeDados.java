@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.imepac.util;
+package br.edu.imepac.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ public class ConexaoBancoDeDados {
         public boolean abrirConexao() throws SQLException{
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conBanco = DriverManager.getConnection("jdbc:mysql://127.0.0.1/clinica_medic","root","1234");
+                conBanco = DriverManager.getConnection("jdbc:mysql://127.0.0.1/clinica_medica","root","1234");
                 System.out.println("Conectado com sucesso.");
                 return true;
             }catch (ClassNotFoundException ex) {

@@ -1,5 +1,5 @@
 
-import br.edu.imepac.util.ConexaoBancoDeDados;
+import br.edu.imepac.DAO.ConexaoBancoDeDados;
 import java.sql.SQLException;
 
 /*
