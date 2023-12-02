@@ -6,7 +6,6 @@ package br.edu.imepac.DAO;
 
 import br.edu.imepac.entidades.C_funcionarios;
 import br.edu.imepac.util.Conversao;
-import com.google.protobuf.Internal.ListAdapter.Converter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
