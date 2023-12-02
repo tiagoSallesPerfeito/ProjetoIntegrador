@@ -4,7 +4,6 @@
  */
 package br.edu.imepac.DAO;
 
-import br.edu.imepac.entidades.C_convenios;
 import br.edu.imepac.entidades.C_medicos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -124,7 +123,6 @@ public class Medicos {
             return null;   
         }
     }
-    
 }
 
 
