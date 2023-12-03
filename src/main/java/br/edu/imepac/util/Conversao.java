@@ -92,4 +92,22 @@ public class Conversao {
          }else
              return 0;
     }
+    
+    public String soDigito(String strValor){
+        int intTamanho = strValor.length();
+        String strValidacao = "0123456789";
+        String strNovoValor = "";
+        char chrDigito;
+        int intContador;
+        
+        for(intContador = 0; intContador < intTamanho; intContador++){
+            
+            chrDigito = strValor.charAt(intContador);
+            
+            if(strValidacao.indexOf(chrDigito) != -1){
+                strNovoValor = strNovoValor + chrDigito;
+            }
+        }
+        return (strNovoValor);
+    }
 }
