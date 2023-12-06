@@ -97,6 +97,48 @@ public class Agenda_consultas {
         }
     }
     
+    public boolean cancelarRegistro(int intRegistro){
+         String strComandoSQL;
+        
+        try{
+            strComandoSQL = "UPDATE agenda_consulta SET Cancelado = 'S' "
+                    + "WHERE Registro_Agenda = " + intRegistro;
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            psComando.executeUpdate();
+            return true;
+            
+        }catch (Exception erro){
+            erro.printStackTrace(); 
+            return false;
+        }
+    }    
     
-    
+     public ResultSet listarAgenda(String strData){
+        String strComandoSQL;        
+        try { 
+            strComandoSQL = "SELECT agenda_consulta.Registro_Agenda AS RegistroAgenda,"
+                    + " agenda_consulta.Codigo_Paciente AS CodigoPaciente,"
+                    + " agenda_consulta.Codigo_Medico AS CodigoMedico,"
+                    + " agenda_consulta.Data AS DataConsulta,"
+                    + " agenda_consulta.Hora AS HoraConsulta,"
+                    + " agenda_consulta.Retorno,"
+                    + " agenda_consulta.Cancelado,"
+                    + " pacientes.Nome AS NomePaciente,"
+                    + " pacientes.Numero_RG AS RGPaciente,"
+                    + " pacientes.Numero_CPF AS CPFPaciente,"
+                    + " medicos.Nome_Medico AS Medico"
+                    + " FROM agenda_consulta, pacientes, medicos"
+                    + " WHERE (agenda_consulta.Codigo_Paciente = pacientes.Codigo_Paciente)"
+                    + " AND (agenda_consulta.Codigo_Medico = medicos.Codigo_Medico)"
+                    + " AND (agenda_consulta.Cancelado <> 'S')"
+                    + " AND (agenda_consulta.Data = '" + strData + "')"
+                    + " ORDER BY DataConsulta, HoraConsulta";
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistro = psComando.executeQuery();
+            return rsRegistro;
+        }catch (Exception erro){
+            erro.printStackTrace(); 
+            return null;
+        } 
+     }
 }
