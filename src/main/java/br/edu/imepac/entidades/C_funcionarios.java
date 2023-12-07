@@ -67,4 +67,17 @@ public class C_funcionarios extends C_pessoa {
     public void setNumero_pis(String numero_pis) {
         this.numero_pis = numero_pis;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("C_funcionarios{");
+        sb.append("codigo_funcionario=").append(codigo_funcionario);
+        sb.append(", numero_ctps=").append(numero_ctps);
+        sb.append(", numero_pis=").append(numero_pis);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+    
 }
