@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author mzhjd
+ * @author Matheus Carrasco
  */
 public class CadastroEspecialidades extends javax.swing.JFrame {
     
