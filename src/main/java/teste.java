@@ -1,5 +1,9 @@
 
 import br.edu.imepac.DAO.ConexaoBancoDeDados;
+import br.edu.imepac.DAO.Usuarios;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /*
@@ -9,13 +13,13 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Matheus Carrasco
+ * @author mzhjd
  */
-public class MainTeste {
+public class teste {
     
-    public static void main(String[] args) throws SQLException{
-        ConexaoBancoDeDados bd = new ConexaoBancoDeDados();
-        
-        bd.abrirConexao();
-    }    
+    public static void main (String[] args) throws SQLException{
+
+
+    }
+    
 }
