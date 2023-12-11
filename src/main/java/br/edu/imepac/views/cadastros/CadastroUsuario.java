@@ -6,7 +6,9 @@ package br.edu.imepac.views.cadastros;
 
 import br.edu.imepac.views.iniciais.TelaInicial;
 import br.edu.imepac.DAO.Usuarios;
+import br.edu.imepac.entidades.C_usuarios;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 /**
  *
@@ -14,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class CadastroUsuario extends javax.swing.JFrame {
     
-    Usuarios user = new Usuarios();
+    C_usuarios usuario = new C_usuarios();
 
     /**
      * Creates new form viewLogin
@@ -35,11 +37,10 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        button2 = new java.awt.Button();
-        jTextField2 = new javax.swing.JTextField();
+        cadastrar = new java.awt.Button();
+        userText = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        cadConvenio = new javax.swing.JCheckBox();
         cadFuncionario = new javax.swing.JCheckBox();
         cadUsuario = new javax.swing.JCheckBox();
         cadEspecialidade = new javax.swing.JCheckBox();
@@ -51,6 +52,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         cancelConsultas = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         atendimento = new javax.swing.JCheckBox();
+        passwordText = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -68,22 +70,22 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Usuário:");
 
-        button2.setBackground(new java.awt.Color(164, 194, 247));
-        button2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        button2.setForeground(new java.awt.Color(66, 141, 255));
-        button2.setLabel("Cadastrar");
-        button2.setName(""); // NOI18N
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        cadastrar.setBackground(new java.awt.Color(164, 194, 247));
+        cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cadastrar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cadastrar.setForeground(new java.awt.Color(66, 141, 255));
+        cadastrar.setLabel("Cadastrar");
+        cadastrar.setName(""); // NOI18N
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                cadastrarActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        userText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        userText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                userTextActionPerformed(evt);
             }
         });
 
@@ -91,13 +93,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Modulo Administrativo");
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jCheckBox1.setText("Cadastro de Convênios");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        cadConvenio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cadConvenio.setText("Cadastro de Convênios");
+        cadConvenio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                cadConvenioActionPerformed(evt);
             }
         });
 
@@ -172,13 +172,20 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
 
+        passwordText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        passwordText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(400, 400, 400))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,73 +195,69 @@ public class CadastroUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cadMedicos)
-                            .addComponent(jCheckBox1)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cadEspecialidade)
-                                        .addComponent(cadFuncionario)
-                                        .addComponent(cadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(17, 17, 17)
-                                            .addComponent(jLabel3)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cancelConsultas)
-                                        .addComponent(agenConsultas)
-                                        .addComponent(cadPacientes)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(17, 17, 17)
-                                            .addComponent(jLabel5)))
-                                    .addGap(103, 103, 103)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(atendimento)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(17, 17, 17)
-                                            .addComponent(jLabel6))))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(146, 146, 146)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(843, Short.MAX_VALUE)))
+                            .addComponent(cadConvenio)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cadEspecialidade)
+                                    .addComponent(cadFuncionario)
+                                    .addComponent(cadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(jLabel3)))
+                                .addGap(141, 141, 141)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cancelConsultas)
+                                    .addComponent(agenConsultas)
+                                    .addComponent(cadPacientes)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(jLabel5)))
+                                .addGap(103, 103, 103)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(atendimento)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(jLabel6))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(passwordText)
+                                    .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE))))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cadFuncionario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cadUsuario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cadEspecialidade))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(atendimento))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(70, 70, 70)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(userText)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cadFuncionario)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cadUsuario)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cadEspecialidade))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(atendimento)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadPacientes)
@@ -264,16 +267,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
                         .addComponent(cancelConsultas)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cadMedicos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
-                .addGap(2, 2, 2)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadConvenio)
+                .addGap(19, 19, 19)
+                .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(163, 163, 163)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(306, Short.MAX_VALUE)))
         );
 
         jMenu9.setText("Inicio");
@@ -312,21 +310,100 @@ public class CadastroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu9MouseClicked
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        
+        if(verificaUsuarioESenhaEmBranco()){
+            usuario.setIdUsuario(userText.getText());
+            usuario.setSenhaAcesso(passwordText.getText());
+            String validacao; 
+            if (cadFuncionario.isSelected()){
+                validacao = "S";
+                usuario.setCadastroFuncionario(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroFuncionario(validacao);
+            }
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+            if (cadUsuario.isSelected()){
+                validacao = "S";
+                usuario.setCadastroUsuario(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroUsuario(validacao);
+            }
+
+            if (cadEspecialidade.isSelected()){
+                validacao = "S";
+                usuario.setCadastroEspecialidade(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroEspecialidade(validacao);
+            }
+
+            if (cadMedicos.isSelected()){
+                validacao = "S";
+                usuario.setCadastroMedico(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroMedico(validacao);
+            }
+
+            if (cadConvenio.isSelected()){
+                validacao = "S";
+                usuario.setCadastroConvenio(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroConvenio(validacao);
+            }
+
+            if (cadPacientes.isSelected()){
+                validacao = "S";
+                usuario.setCadastroPaciente(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCadastroPaciente(validacao);
+            }
+
+            if (agenConsultas.isSelected()){
+                validacao = "S";
+                usuario.setAgendamentoConsulta(validacao);
+            }else{
+                validacao = "N";
+                usuario.setAgendamentoConsulta(validacao);
+            }
+
+            if (cancelConsultas.isSelected()){
+                validacao = "S";
+                usuario.setCancelamentoConsulta(validacao);
+            }else{
+                validacao = "N";
+                usuario.setCancelamentoConsulta(validacao);
+            }
+
+            if (atendimento.isSelected()){
+                validacao = "S";
+                usuario.setModuloAtendimento(validacao);
+            }else{
+                validacao = "N";
+                usuario.setModuloAtendimento(validacao);
+            }
+            
+             JOptionPane.showMessageDialog(null, "Usuário "
+                     + usuario.getIdUsuario() + " cadastrado com sucesso.");  
+        }    
+    }//GEN-LAST:event_cadastrarActionPerformed
+
+    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_userTextActionPerformed
 
     private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
         new TelaInicial().setVisible(true);
     }//GEN-LAST:event_jMenu9ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void cadConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadConvenioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_cadConvenioActionPerformed
 
     private void cadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadUsuarioActionPerformed
         // TODO add your handling code here:
@@ -356,9 +433,25 @@ public class CadastroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_atendimentoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextActionPerformed
+
+    public boolean verificaUsuarioESenhaEmBranco(){
+        if (userText.getText().isBlank() || userText.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Campo "
+                    + "usuário é obrigatório e deve ser preenchido!", "Alerta",
+                    ERROR_MESSAGE);  
+            return false;
+        }
+        if (passwordText.getPassword().length == 0) {
+            JOptionPane.showMessageDialog(null, "Campo "
+                    + "senha é obrigatório e deve ser preenchido!", "Alerta", 
+                    ERROR_MESSAGE);
+            return false;
+        }
+        return true;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -425,14 +518,14 @@ public class CadastroUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox agenConsultas;
     private javax.swing.JCheckBox atendimento;
-    private java.awt.Button button2;
+    private javax.swing.JCheckBox cadConvenio;
     private javax.swing.JCheckBox cadEspecialidade;
     private javax.swing.JCheckBox cadFuncionario;
     private javax.swing.JCheckBox cadMedicos;
     private javax.swing.JCheckBox cadPacientes;
     private javax.swing.JCheckBox cadUsuario;
+    private java.awt.Button cadastrar;
     private javax.swing.JCheckBox cancelConsultas;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -443,7 +536,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPasswordField passwordText;
+    private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
 }

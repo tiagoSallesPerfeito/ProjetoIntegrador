@@ -104,10 +104,4 @@ public class C_agenda_consultas {
     
     
     
-    
-    
-    
-    
-    
-    
 }
