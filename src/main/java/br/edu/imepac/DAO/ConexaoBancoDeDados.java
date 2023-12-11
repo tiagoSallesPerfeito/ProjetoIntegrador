@@ -19,7 +19,7 @@ public class ConexaoBancoDeDados {
         
         public boolean abrirConexao() throws SQLException{
             try {
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 conBanco = DriverManager.getConnection("jdbc:mysql://127.0.0.1/clinica_medica","root","1234");
                 System.out.println("Conectado com sucesso.");
                 return true;

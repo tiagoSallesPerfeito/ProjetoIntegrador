@@ -27,24 +27,31 @@ public class Usuarios {
         String strComandoSQL;
 
         try {
-            strComandoSQL = "INSERT INTO usuarios(Identificacao_Usuario, Senha_Acesso,"
-                    + "Cadastro_Funcionario, Cadastro_Usuario, Cadastro_Paciente,"
-                    + "Cadastro_Especialidade, Cadastro_Medico, Cadastro_Convenio,"
-                    + "Agendamento_Consulta, Cancelamento_Consulta,"
-                    + "Modulo_Administrativo, Modulo_Agendamento,"
-                    + "Modulo_Atendimento) values ('" 
-                    + usuario.getIdUsuario() + "'," + "'" 
-                    + usuario.getCadastroFuncionario() + "'," + "'" 
-                    + usuario.getCadastroUsuario() + "'," + "'" 
-                    + usuario.getCadastroPaciente() + "'," + "'" 
-                    + usuario.getCadastroEspecialidade() + "'," + "'" 
-                    + usuario.getCadastroMedico() + "'," + "'" 
-                    + usuario.getCadastroConvenio() + "'," + "'" 
-                    + usuario.getAgendamentoConsulta() + "'," + "'"
-                    + usuario.getCancelamentoConsulta() + "'," + "'" 
-                    + usuario.getModuloAdministrativo() + "'," + "'" 
-                    + usuario.getModuloAgendamento() + "'," + "'" 
-                    + usuario.getModuloAtendimento() + "')";
+            strComandoSQL = "INSERT INTO usuarios (Identificacao_Usuario, "
+                    + "Senha_Acesso, "
+                    + "Cadastro_Funcionario, "
+                    + "Cadastro_Usuario, "
+                    + "Cadastro_Paciente, "
+                    + "Cadastro_Especialidade, "
+                    + "Cadastro_Medico, "
+                    + "Cadastro_Convenio, "
+                    + "Agendamento_Consulta, "
+                    + "Cancelamento_Consulta, "
+                    + "Modulo_Administrativo, "
+                    + "Modulo_Agendamento, "
+                    + "Modulo_Atendimento) values ('" + usuario.getIdUsuario() + 
+                    "','" + usuario.getSenhaAcesso() + 
+                    "','" + usuario.getCadastroFuncionario() + 
+                    "','" + usuario.getCadastroUsuario() + 
+                    "','"+ usuario.getCadastroPaciente() + 
+                    "','" + usuario.getCadastroEspecialidade() + 
+                    "','" + usuario.getCadastroMedico() + 
+                    "','" + usuario.getCadastroConvenio() + 
+                    "','" + usuario.getAgendamentoConsulta() + 
+                    "','" + usuario.getCancelamentoConsulta() + 
+                    "','" + usuario.getModuloAdministrativo() + 
+                    "','" + usuario.getModuloAgendamento() + 
+                    "','" + usuario.getModuloAtendimento() + "');"; 
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
             return true;
