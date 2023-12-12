@@ -83,46 +83,21 @@ public class CadastroUsuario extends javax.swing.JFrame {
         });
 
         userText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        userText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userTextActionPerformed(evt);
-            }
-        });
 
         cadConvenio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadConvenio.setText("Cadastro de Convênios");
-        cadConvenio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadConvenioActionPerformed(evt);
-            }
-        });
 
         cadFuncionario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadFuncionario.setText("Cadastro de Funcionários");
 
         cadUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadUsuario.setText("Cadastro de Usuários");
-        cadUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadUsuarioActionPerformed(evt);
-            }
-        });
 
         cadEspecialidade.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadEspecialidade.setText("Cadastro de Especialidades");
-        cadEspecialidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadEspecialidadeActionPerformed(evt);
-            }
-        });
 
         cadMedicos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadMedicos.setText("Cadastro de Médicos");
-        cadMedicos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadMedicosActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -130,58 +105,23 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         cadPacientes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cadPacientes.setText("Cadastro de Pacientes");
-        cadPacientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadPacientesActionPerformed(evt);
-            }
-        });
 
         agenConsultas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         agenConsultas.setText("Agendamento de Consultas");
-        agenConsultas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agenConsultasActionPerformed(evt);
-            }
-        });
 
         cancelConsultas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cancelConsultas.setText("Cancelamento de Consultas");
-        cancelConsultas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelConsultasActionPerformed(evt);
-            }
-        });
 
         passwordText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        passwordText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextActionPerformed(evt);
-            }
-        });
 
         moduloAtendimento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         moduloAtendimento.setText("Modulo Atendimento");
-        moduloAtendimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moduloAtendimentoActionPerformed(evt);
-            }
-        });
 
         moduloAdministrativo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         moduloAdministrativo.setText("Modulo Administrativo");
-        moduloAdministrativo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moduloAdministrativoActionPerformed(evt);
-            }
-        });
 
         moduloAgendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         moduloAgendamento.setText("Modulo Agendamento");
-        moduloAgendamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moduloAgendamentoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -217,10 +157,10 @@ public class CadastroUsuario extends javax.swing.JFrame {
                                     .addComponent(cadConvenio))
                                 .addGap(141, 141, 141)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cancelConsultas)
                                     .addComponent(agenConsultas)
                                     .addComponent(cadPacientes)
-                                    .addComponent(moduloAgendamento))
+                                    .addComponent(moduloAgendamento)
+                                    .addComponent(cancelConsultas, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(92, 92, 92)
                                 .addComponent(moduloAtendimento)))))
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -249,11 +189,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
                                 .addComponent(moduloAgendamento)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadPacientes)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(agenConsultas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancelConsultas)
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -431,57 +371,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cadastrarActionPerformed
 
-    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userTextActionPerformed
-
     private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
         new TelaInicial().setVisible(true);
     }//GEN-LAST:event_jMenu9ActionPerformed
-
-    private void cadConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadConvenioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadConvenioActionPerformed
-
-    private void cadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadUsuarioActionPerformed
-
-    private void cadEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadEspecialidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadEspecialidadeActionPerformed
-
-    private void cadMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadMedicosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadMedicosActionPerformed
-
-    private void agenConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenConsultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_agenConsultasActionPerformed
-
-    private void cancelConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelConsultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelConsultasActionPerformed
-
-    private void cadPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadPacientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadPacientesActionPerformed
-
-    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextActionPerformed
-
-    private void moduloAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloAtendimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moduloAtendimentoActionPerformed
-
-    private void moduloAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloAdministrativoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moduloAdministrativoActionPerformed
-
-    private void moduloAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloAgendamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moduloAgendamentoActionPerformed
 
     public boolean verificaUsuarioESenhaEmBranco(){
         if (userText.getText().isBlank() || userText.getText().isEmpty()) {

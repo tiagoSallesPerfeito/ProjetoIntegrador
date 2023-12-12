@@ -100,10 +100,10 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="cancelConsultas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="agenConsultas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cadPacientes" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="moduloAgendamento" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cancelConsultas" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                   <Component id="moduloAtendimento" min="-2" max="-2" attributes="0"/>
@@ -144,11 +144,11 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cadPacientes" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="agenConsultas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cancelConsultas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="cadastrar" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
@@ -225,9 +225,6 @@
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userTextActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cadConvenio">
           <Properties>
@@ -236,9 +233,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Conv&#xea;nios"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadConvenioActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cadFuncionario">
           <Properties>
@@ -255,9 +249,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Usu&#xe1;rios"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadUsuarioActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cadEspecialidade">
           <Properties>
@@ -266,9 +257,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Especialidades"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadEspecialidadeActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cadMedicos">
           <Properties>
@@ -277,9 +265,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de M&#xe9;dicos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadMedicosActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -297,9 +282,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Pacientes"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadPacientesActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="agenConsultas">
           <Properties>
@@ -308,9 +290,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agendamento de Consultas"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agenConsultasActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cancelConsultas">
           <Properties>
@@ -319,9 +298,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelamento de Consultas"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelConsultasActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="passwordText">
           <Properties>
@@ -329,9 +305,6 @@
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordTextActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="moduloAtendimento">
           <Properties>
@@ -340,9 +313,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Modulo Atendimento"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moduloAtendimentoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="moduloAdministrativo">
           <Properties>
@@ -351,9 +321,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Modulo Administrativo"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moduloAdministrativoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="moduloAgendamento">
           <Properties>
@@ -362,9 +329,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Modulo Agendamento"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moduloAgendamentoActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

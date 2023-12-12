@@ -46,7 +46,7 @@ public class Pacientes {
             strComandoSQL = "INSERT INTO pacientes(Nome, Numero_RG, Orgao_Emissor, "
                     + "Numero_CPF, Endereco, Numero, Complemento, Bairro, Cidade, "
                     + "Estado, Telefone, Celular, Data_Nascimento, Sexo, Tem_Convenio, "
-                    + "Codigo_Convenio, Senha_Acesso) VALUES "
+                    + "Codigo_Convenio, Senha_Acesso) VALUES ("
                     + "'" + paciente.getNomeCompleto() + "', "
                     + "'" + paciente.getNumeroRg() + "', "
                     + "'" + paciente.getOrgaoEmissor() + "', "
@@ -63,7 +63,7 @@ public class Pacientes {
                     + "'" + paciente.getSexo() + "', "
                     + "'" + paciente.getTemConvenio() + "', "
                     + "'" + paciente.getCodigoConvenio() + "', "
-                    + "'" + paciente.getSenhaAcesso() + "')";
+                    + "'" + paciente.getSenhaAcesso() + "');";
             
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
