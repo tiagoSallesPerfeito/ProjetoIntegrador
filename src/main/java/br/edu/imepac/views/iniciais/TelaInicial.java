@@ -9,11 +9,13 @@ import br.edu.imepac.views.cadastros.CadastroConvenio;
 import br.edu.imepac.views.cadastros.CadastroEspecialidades;
 import br.edu.imepac.views.cadastros.CadastroFuncionarios;
 import br.edu.imepac.views.cadastros.CadastroMedico;
+import br.edu.imepac.views.cadastros.CadastroPacientes;
 import br.edu.imepac.views.cadastros.CadastroUsuario;
 import br.edu.imepac.views.localizar.LocalizarConvenio;
 import br.edu.imepac.views.localizar.LocalizarEspecialidade;
 import br.edu.imepac.views.localizar.LocalizarFuncionario;
 import br.edu.imepac.views.localizar.LocalizarMedico;
+import br.edu.imepac.views.localizar.LocalizarPaciente;
 import br.edu.imepac.views.localizar.LocalizarUsuario;
 import javax.swing.JOptionPane;
 
@@ -45,30 +47,31 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        adicionarFuncionario = new javax.swing.JMenuItem();
+        localizarFuncionario = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        adicionarUsuario = new javax.swing.JMenuItem();
+        localizarUsuario = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        adicionarEspecialidade = new javax.swing.JMenuItem();
+        localizarEspecialidade = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem18 = new javax.swing.JMenuItem();
+        adicionarMedicos = new javax.swing.JMenuItem();
+        localizarMedicos = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
-        jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem22 = new javax.swing.JMenuItem();
+        adicionarConvenio = new javax.swing.JMenuItem();
+        localizarConvenio = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
+        adicionarPaciente = new javax.swing.JMenuItem();
+        localizarPaciente = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
+        adicionarConsulta = new javax.swing.JMenuItem();
+        cancelarConsulta = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenu12 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu13 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,101 +93,101 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jMenu4.setText("Funcionários");
 
-        jMenuItem4.setText("Adicionar");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        adicionarFuncionario.setText("Adicionar");
+        adicionarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                adicionarFuncionarioActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu4.add(adicionarFuncionario);
 
-        jMenuItem10.setText("Localizar");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        localizarFuncionario.setText("Localizar");
+        localizarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                localizarFuncionarioActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem10);
+        jMenu4.add(localizarFuncionario);
 
         jMenu1.add(jMenu4);
 
         jMenu5.setText("Usuários");
 
-        jMenuItem3.setText("Adicionar");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        adicionarUsuario.setText("Adicionar");
+        adicionarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                adicionarUsuarioActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu5.add(adicionarUsuario);
 
-        jMenuItem9.setText("Localizar");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        localizarUsuario.setText("Localizar");
+        localizarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                localizarUsuarioActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem9);
+        jMenu5.add(localizarUsuario);
 
         jMenu1.add(jMenu5);
 
         jMenu6.setText("Especialidade");
 
-        jMenuItem11.setText("Adicionar");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        adicionarEspecialidade.setText("Adicionar");
+        adicionarEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                adicionarEspecialidadeActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem11);
+        jMenu6.add(adicionarEspecialidade);
 
-        jMenuItem14.setText("Localizar");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+        localizarEspecialidade.setText("Localizar");
+        localizarEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
+                localizarEspecialidadeActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem14);
+        jMenu6.add(localizarEspecialidade);
 
         jMenu1.add(jMenu6);
 
         jMenu7.setText("Médicos");
 
-        jMenuItem15.setText("Adicionar");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+        adicionarMedicos.setText("Adicionar");
+        adicionarMedicos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
+                adicionarMedicosActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem15);
+        jMenu7.add(adicionarMedicos);
 
-        jMenuItem18.setText("Localizar");
-        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+        localizarMedicos.setText("Localizar");
+        localizarMedicos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem18ActionPerformed(evt);
+                localizarMedicosActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem18);
+        jMenu7.add(localizarMedicos);
 
         jMenu1.add(jMenu7);
 
         jMenu8.setText("Convenios");
 
-        jMenuItem19.setText("Adicionar");
-        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+        adicionarConvenio.setText("Adicionar");
+        adicionarConvenio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem19ActionPerformed(evt);
+                adicionarConvenioActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem19);
+        jMenu8.add(adicionarConvenio);
 
-        jMenuItem22.setText("Localizar");
-        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+        localizarConvenio.setText("Localizar");
+        localizarConvenio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem22ActionPerformed(evt);
+                localizarConvenioActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem22);
+        jMenu8.add(localizarConvenio);
 
         jMenu1.add(jMenu8);
 
@@ -192,48 +195,47 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jMenu2.setText("Agendamento");
 
-        jMenu10.setText("jMenu10");
+        jMenu10.setText("Paciente");
+
+        adicionarPaciente.setText("Adicionar");
+        adicionarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adicionarPacienteActionPerformed(evt);
+            }
+        });
+        jMenu10.add(adicionarPaciente);
+
+        localizarPaciente.setText("Localizar");
+        localizarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                localizarPacienteActionPerformed(evt);
+            }
+        });
+        jMenu10.add(localizarPaciente);
+
         jMenu2.add(jMenu10);
 
-        jMenu11.setText("jMenu11");
+        jMenu11.setText("Agendamento");
+
+        adicionarConsulta.setText("Adicionar");
+        jMenu11.add(adicionarConsulta);
+
+        cancelarConsulta.setText("Cancelar");
+        jMenu11.add(cancelarConsulta);
+
         jMenu2.add(jMenu11);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Atendimento");
 
-        jMenu12.setText("Pacientes");
-
-        jMenuItem1.setText("Adicionar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jMenuItem1);
-
-        jMenuItem2.setText("Localizar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jMenuItem2);
-
-        jMenu3.add(jMenu12);
-
-        jMenu13.setText("Agendamento");
+        jMenu13.setText("Registro");
 
         jMenuItem5.setText("Adicionar");
         jMenu13.add(jMenuItem5);
 
-        jMenuItem6.setText("Cancelar");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu13.add(jMenuItem6);
+        jMenuItem16.setText("Localizar");
+        jMenu13.add(jMenuItem16);
 
         jMenu3.add(jMenu13);
 
@@ -263,61 +265,58 @@ public class TelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+    private void adicionarEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarEspecialidadeActionPerformed
         new CadastroEspecialidades().setVisible(true);       
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    }//GEN-LAST:event_adicionarEspecialidadeActionPerformed
 
-    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+    private void adicionarMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarMedicosActionPerformed
         new CadastroMedico().setVisible(true);        
-    }//GEN-LAST:event_jMenuItem15ActionPerformed
+    }//GEN-LAST:event_adicionarMedicosActionPerformed
 
-    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+    private void adicionarConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarConvenioActionPerformed
         new CadastroConvenio().setVisible(true);
-    }//GEN-LAST:event_jMenuItem19ActionPerformed
+    }//GEN-LAST:event_adicionarConvenioActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void adicionarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarUsuarioActionPerformed
         new CadastroUsuario().setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_adicionarUsuarioActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void adicionarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarFuncionarioActionPerformed
         new CadastroFuncionarios().setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_adicionarFuncionarioActionPerformed
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    private void localizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarFuncionarioActionPerformed
         new LocalizarFuncionario().setVisible(true);
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    }//GEN-LAST:event_localizarFuncionarioActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void localizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarUsuarioActionPerformed
         new LocalizarUsuario().setVisible(true);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_localizarUsuarioActionPerformed
 
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+    private void localizarEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarEspecialidadeActionPerformed
         new LocalizarEspecialidade().setVisible(true);
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
+    }//GEN-LAST:event_localizarEspecialidadeActionPerformed
 
-    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+    private void localizarMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarMedicosActionPerformed
         new LocalizarMedico().setVisible(true);
-    }//GEN-LAST:event_jMenuItem18ActionPerformed
+    }//GEN-LAST:event_localizarMedicosActionPerformed
 
-    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+    private void localizarConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarConvenioActionPerformed
         new LocalizarConvenio().setVisible(true);
-    }//GEN-LAST:event_jMenuItem22ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_localizarConvenioActionPerformed
 
     private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_jMenu9ActionPerformed
+
+    private void adicionarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarPacienteActionPerformed
+        new CadastroPacientes().setVisible(true);
+    }//GEN-LAST:event_adicionarPacienteActionPerformed
+
+    private void localizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizarPacienteActionPerformed
+        new LocalizarPaciente().setVisible(true);
+        
+    }//GEN-LAST:event_localizarPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,10 +357,17 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem adicionarConsulta;
+    private javax.swing.JMenuItem adicionarConvenio;
+    private javax.swing.JMenuItem adicionarEspecialidade;
+    private javax.swing.JMenuItem adicionarFuncionario;
+    private javax.swing.JMenuItem adicionarMedicos;
+    private javax.swing.JMenuItem adicionarPaciente;
+    private javax.swing.JMenuItem adicionarUsuario;
+    private javax.swing.JMenuItem cancelarConsulta;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
-    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -372,20 +378,14 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem localizarConvenio;
+    private javax.swing.JMenuItem localizarEspecialidade;
+    private javax.swing.JMenuItem localizarFuncionario;
+    private javax.swing.JMenuItem localizarMedicos;
+    private javax.swing.JMenuItem localizarPaciente;
+    private javax.swing.JMenuItem localizarUsuario;
     // End of variables declaration//GEN-END:variables
 }
