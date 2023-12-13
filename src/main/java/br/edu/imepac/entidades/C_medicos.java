@@ -12,7 +12,7 @@ public class C_medicos {
     
     private int codigo_medico;
     private String nome_medico, CRM;
-    private int codigo_especialidade;
+    private Integer codigo_especialidade;
     
     public C_medicos(){
         codigo_medico = 0;
@@ -55,7 +55,7 @@ public class C_medicos {
     public int getCodigoEspecialidade() {
         return codigo_especialidade;
     }
-    public void setCodigoEspecialidade(int codigo_especialidade) {
+    public void setCodigoEspecialidade(Integer codigo_especialidade) {
         this.codigo_especialidade = codigo_especialidade;
     }   
 }

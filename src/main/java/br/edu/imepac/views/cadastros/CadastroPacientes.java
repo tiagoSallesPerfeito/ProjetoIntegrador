@@ -414,6 +414,11 @@ public class CadastroPacientes extends javax.swing.JFrame {
             paciente.setNumeroCpf(cpf.getText());            
             paciente.setEndereco(endereco.getText());
             paciente.setNumero(numero.getText());
+            if(complemento.getText().isBlank() || complemento.getText().isEmpty()){
+                paciente.setComplemento("");
+            }else{
+                paciente.setComplemento(complemento.getText());
+            }
             paciente.setBairro(bairro.getText());
             paciente.setCidade(cidade.getText());
             String getEstado = estado.getSelectedItem().toString();
@@ -553,7 +558,7 @@ public class CadastroPacientes extends javax.swing.JFrame {
             return false;
         }
         
-        if (empresa.getText().isBlank() && possuiConvenio.getText().isEmpty()) {
+        if (empresa.getText().isBlank() && !possuiConvenio.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Digite a empresa "
                     + "do convênio.", "Alerta", 
                     ERROR_MESSAGE);

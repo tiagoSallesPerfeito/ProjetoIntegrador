@@ -4,9 +4,13 @@
  */
 package br.edu.imepac.views.cadastros;
 
+import br.edu.imepac.DAO.ConexaoBancoDeDados;
+import br.edu.imepac.DAO.Especialidades;
 import br.edu.imepac.views.iniciais.TelaInicial;
 import br.edu.imepac.DAO.Usuarios;
+import br.edu.imepac.views.iniciais.TelaLogin;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 /**
  *
@@ -14,8 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class CadastroEspecialidades extends javax.swing.JFrame {
     
-    Usuarios user = new Usuarios();
-
+    
     /**
      * Creates new form viewLogin
      */
@@ -35,8 +38,8 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        button2 = new java.awt.Button();
-        jTextField2 = new javax.swing.JTextField();
+        cadastrarEspecialidade = new java.awt.Button();
+        descricaoEspecialidade = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -54,22 +57,22 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Descrição:");
 
-        button2.setBackground(new java.awt.Color(164, 194, 247));
-        button2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        button2.setForeground(new java.awt.Color(66, 141, 255));
-        button2.setLabel("Cadastrar");
-        button2.setName(""); // NOI18N
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarEspecialidade.setBackground(new java.awt.Color(164, 194, 247));
+        cadastrarEspecialidade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cadastrarEspecialidade.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cadastrarEspecialidade.setForeground(new java.awt.Color(66, 141, 255));
+        cadastrarEspecialidade.setLabel("Cadastrar");
+        cadastrarEspecialidade.setName(""); // NOI18N
+        cadastrarEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                cadastrarEspecialidadeActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        descricaoEspecialidade.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        descricaoEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                descricaoEspecialidadeActionPerformed(evt);
             }
         });
 
@@ -83,13 +86,13 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(descricaoEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(352, 352, 352)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(425, 425, 425)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cadastrarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -100,9 +103,9 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descricaoEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastrarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -120,6 +123,11 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
         jMenuBar1.add(jMenu9);
 
         jMenu10.setText("Sair");
+        jMenu10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu10ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
@@ -142,18 +150,64 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu9MouseClicked
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
+    private void cadastrarEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarEspecialidadeActionPerformed
+       
+        if(verificaDescricao()){
+            String descricao = descricaoEspecialidade.getText();
+            
+            try{
+                ConexaoBancoDeDados conexao = new ConexaoBancoDeDados();
+                Especialidades esp = new Especialidades();
+                
+                if(conexao.abrirConexao()){
+                    esp.configurarConexao(conexao.obterConexao());
+                    if(esp.inserirRegistro(descricao)){                                    
+                        JOptionPane.showMessageDialog(null, "Especialidade" +
+                          " cadastrada com sucesso."); 
+                    }else{
+                        JOptionPane.showMessageDialog(null, ""
+                        + "Não foi possivel cadastrar o especialidade", "Alerta", 
+                         ERROR_MESSAGE);
+                    }
+                    conexao.fecharConexao();
+                }else{
+                        JOptionPane.showMessageDialog(null, ""
+                        + "Não foi possivel estabelecer conexão com o banco de dados!"
+                        , "Alerta", ERROR_MESSAGE);
+                }
+            }catch(Exception erro){
+                erro.printStackTrace();
+                JOptionPane.showMessageDialog(null, ""
+                + "Erro do sistema: processo de cadastro de especialidade"
+                , "Alerta", ERROR_MESSAGE);
+            }  
+        }
+        
+    }//GEN-LAST:event_cadastrarEspecialidadeActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void descricaoEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descricaoEspecialidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_descricaoEspecialidadeActionPerformed
 
     private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
         new TelaInicial().setVisible(true);
     }//GEN-LAST:event_jMenu9ActionPerformed
 
+    private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu10ActionPerformed
+        new TelaLogin().setVisible(true);
+    }//GEN-LAST:event_jMenu10ActionPerformed
+
+     public boolean verificaDescricao(){
+        if (descricaoEspecialidade.getText().isBlank() || descricaoEspecialidade.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Campo "
+                    + "descrição é obrigatório e deve ser preenchido!", "Alerta",
+                    ERROR_MESSAGE);  
+            return false;
+        }else{
+            return true;
+        }
+     }
+    
     /**
      * @param args the command line arguments
      */
@@ -253,13 +307,13 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button2;
+    private java.awt.Button cadastrarEspecialidade;
+    private javax.swing.JTextField descricaoEspecialidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
