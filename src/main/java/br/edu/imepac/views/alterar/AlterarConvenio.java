@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.imepac.views.cadastros;
+package br.edu.imepac.views.alterar;
 
+import br.edu.imepac.views.cadastros.*;
 import br.edu.imepac.DAO.ConexaoBancoDeDados;
 import br.edu.imepac.DAO.Convenios;
 import br.edu.imepac.DAO.Especialidades;
@@ -18,14 +19,14 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  *
  * @author Matheus Carrasco
  */
-public class CadastroConvenio extends javax.swing.JFrame {
+public class AlterarConvenio extends javax.swing.JFrame {
     
     C_convenios convenio = new C_convenios();
 
     /**
      * Creates new form viewLogin
      */
-    public CadastroConvenio() {
+    public AlterarConvenio() {
         initComponents();
     }
 
@@ -57,7 +58,7 @@ public class CadastroConvenio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(66, 141, 255));
-        jLabel2.setText("CADASTRO DE CONVÊNIOS");
+        jLabel2.setText("ALTERAR CONVÊNIO");
         jLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -68,7 +69,7 @@ public class CadastroConvenio extends javax.swing.JFrame {
         cadastrarConvenio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cadastrarConvenio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         cadastrarConvenio.setForeground(new java.awt.Color(66, 141, 255));
-        cadastrarConvenio.setLabel("Cadastrar");
+        cadastrarConvenio.setLabel("Alterar");
         cadastrarConvenio.setName(""); // NOI18N
         cadastrarConvenio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,12 +119,13 @@ public class CadastroConvenio extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(empresaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(425, 425, 425)
                         .addComponent(cadastrarConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(377, 377, 377))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,14 +281,46 @@ public class CadastroConvenio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -323,7 +357,7 @@ public class CadastroConvenio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroConvenio().setVisible(true);
+                new AlterarConvenio().setVisible(true);
             }
         });
     }

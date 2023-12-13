@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.imepac.views.cadastros;
+package br.edu.imepac.views.alterar;
 
+import br.edu.imepac.views.cadastros.*;
 import br.edu.imepac.DAO.ConexaoBancoDeDados;
 import br.edu.imepac.views.iniciais.TelaInicial;
 import br.edu.imepac.DAO.Usuarios;
 import br.edu.imepac.entidades.C_usuarios;
-import br.edu.imepac.views.iniciais.TelaLogin;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -16,14 +16,14 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  *
  * @author Matheus Carrasco
  */
-public class CadastroUsuario extends javax.swing.JFrame {
+public class AlterarUsuario extends javax.swing.JFrame {
     
     C_usuarios usuario = new C_usuarios();
 
     /**
      * Creates new form viewLogin
      */
-    public CadastroUsuario() {
+    public AlterarUsuario() {
         initComponents();
     }
 
@@ -64,7 +64,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(66, 141, 255));
-        jLabel2.setText("CADASTRO DE USUÁRIOS");
+        jLabel2.setText("ALTERAR USUÁRIO");
         jLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -75,7 +75,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cadastrar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         cadastrar.setForeground(new java.awt.Color(66, 141, 255));
-        cadastrar.setLabel("Cadastrar");
+        cadastrar.setLabel("Alterar");
         cadastrar.setName(""); // NOI18N
         cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,38 +133,37 @@ public class CadastroUsuario extends javax.swing.JFrame {
                 .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(390, 390, 390))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(passwordText)
-                                    .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cadEspecialidade)
-                                    .addComponent(cadFuncionario)
-                                    .addComponent(cadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(moduloAdministrativo)
-                                    .addComponent(cadMedicos)
-                                    .addComponent(cadConvenio))
-                                .addGap(141, 141, 141)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(agenConsultas)
-                                    .addComponent(cadPacientes)
-                                    .addComponent(moduloAgendamento)
-                                    .addComponent(cancelConsultas, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(92, 92, 92)
-                                .addComponent(moduloAtendimento)))))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(passwordText)
+                            .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cadEspecialidade)
+                            .addComponent(cadFuncionario)
+                            .addComponent(cadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(moduloAdministrativo)
+                            .addComponent(cadMedicos)
+                            .addComponent(cadConvenio))
+                        .addGap(141, 141, 141)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(agenConsultas)
+                            .addComponent(cadPacientes)
+                            .addComponent(moduloAgendamento)
+                            .addComponent(cancelConsultas, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(92, 92, 92)
+                        .addComponent(moduloAtendimento)))
                 .addContainerGap(29, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(377, 377, 377))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,11 +226,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jMenuBar1.add(jMenu9);
 
         jMenu10.setText("Sair");
-        jMenu10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu10ActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
@@ -381,10 +375,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
         new TelaInicial().setVisible(true);
     }//GEN-LAST:event_jMenu9ActionPerformed
 
-    private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu10ActionPerformed
-        new TelaLogin().setVisible(true); 
-    }//GEN-LAST:event_jMenu10ActionPerformed
-
     public boolean verificaUsuarioESenhaEmBranco(){
         if (userText.getText().isBlank() || userText.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo "
@@ -414,14 +404,46 @@ public class CadastroUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -458,7 +480,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroUsuario().setVisible(true);
+                new AlterarUsuario().setVisible(true);
             }
         });
     }

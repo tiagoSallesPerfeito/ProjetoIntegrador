@@ -5,12 +5,14 @@
 package br.edu.imepac.views.iniciais;
 
 import br.edu.imepac.DAO.Usuarios;
+import br.edu.imepac.views.cadastros.AgendarConsulta;
 import br.edu.imepac.views.cadastros.CadastroConvenio;
 import br.edu.imepac.views.cadastros.CadastroEspecialidades;
 import br.edu.imepac.views.cadastros.CadastroFuncionarios;
 import br.edu.imepac.views.cadastros.CadastroMedico;
 import br.edu.imepac.views.cadastros.CadastroPacientes;
 import br.edu.imepac.views.cadastros.CadastroUsuario;
+import br.edu.imepac.views.localizar.LocalizarAgendamento;
 import br.edu.imepac.views.localizar.LocalizarConvenio;
 import br.edu.imepac.views.localizar.LocalizarEspecialidade;
 import br.edu.imepac.views.localizar.LocalizarFuncionario;
@@ -218,9 +220,19 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu11.setText("Agendamento");
 
         adicionarConsulta.setText("Adicionar");
+        adicionarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adicionarConsultaActionPerformed(evt);
+            }
+        });
         jMenu11.add(adicionarConsulta);
 
-        cancelarConsulta.setText("Cancelar");
+        cancelarConsulta.setText("Localizar");
+        cancelarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarConsultaActionPerformed(evt);
+            }
+        });
         jMenu11.add(cancelarConsulta);
 
         jMenu2.add(jMenu11);
@@ -317,6 +329,14 @@ public class TelaInicial extends javax.swing.JFrame {
         new LocalizarPaciente().setVisible(true);
         
     }//GEN-LAST:event_localizarPacienteActionPerformed
+
+    private void adicionarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarConsultaActionPerformed
+        new AgendarConsulta().setVisible(true);
+    }//GEN-LAST:event_adicionarConsultaActionPerformed
+
+    private void cancelarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarConsultaActionPerformed
+        new LocalizarAgendamento().setVisible(true);       
+    }//GEN-LAST:event_cancelarConsultaActionPerformed
 
     /**
      * @param args the command line arguments

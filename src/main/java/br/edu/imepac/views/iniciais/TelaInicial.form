@@ -163,11 +163,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adicionarConsultaActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="cancelarConsulta">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarConsultaActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

@@ -70,6 +70,7 @@ public class CadastroEspecialidades extends javax.swing.JFrame {
         });
 
         descricaoEspecialidade.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        descricaoEspecialidade.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         descricaoEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descricaoEspecialidadeActionPerformed(evt);

@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.imepac.views.cadastros;
+package br.edu.imepac.views.alterar;
 
+import br.edu.imepac.views.cadastros.*;
 import br.edu.imepac.DAO.ConexaoBancoDeDados;
-import br.edu.imepac.DAO.Convenios;
-import br.edu.imepac.DAO.Especialidades;
+import br.edu.imepac.DAO.Medicos;
 import br.edu.imepac.views.iniciais.TelaInicial;
 import br.edu.imepac.DAO.Usuarios;
-import br.edu.imepac.entidades.C_convenios;
+import br.edu.imepac.entidades.C_medicos;
 import br.edu.imepac.views.iniciais.TelaLogin;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
@@ -18,14 +18,15 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  *
  * @author Matheus Carrasco
  */
-public class CadastroConvenio extends javax.swing.JFrame {
+public class AlterarMedico extends javax.swing.JFrame {
     
-    C_convenios convenio = new C_convenios();
-
+    C_medicos medico = new C_medicos();
+    
+    
     /**
      * Creates new form viewLogin
      */
-    public CadastroConvenio() {
+    public AlterarMedico() {
         initComponents();
     }
 
@@ -41,12 +42,12 @@ public class CadastroConvenio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cadastrarConvenio = new java.awt.Button();
-        empresaNome = new javax.swing.JTextField();
+        cadastrarMedico = new java.awt.Button();
+        nomeMedico = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Cnpj = new javax.swing.JTextField();
+        codEspecialidade = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        telefone = new javax.swing.JTextField();
+        crm = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -57,43 +58,38 @@ public class CadastroConvenio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(66, 141, 255));
-        jLabel2.setText("CADASTRO DE CONVÊNIOS");
+        jLabel2.setText("ALTERAR MÉDICO");
         jLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Empresa:");
+        jLabel1.setText("Nome:");
 
-        cadastrarConvenio.setBackground(new java.awt.Color(164, 194, 247));
-        cadastrarConvenio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        cadastrarConvenio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        cadastrarConvenio.setForeground(new java.awt.Color(66, 141, 255));
-        cadastrarConvenio.setLabel("Cadastrar");
-        cadastrarConvenio.setName(""); // NOI18N
-        cadastrarConvenio.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarMedico.setBackground(new java.awt.Color(164, 194, 247));
+        cadastrarMedico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cadastrarMedico.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cadastrarMedico.setForeground(new java.awt.Color(66, 141, 255));
+        cadastrarMedico.setLabel("Alterar");
+        cadastrarMedico.setName(""); // NOI18N
+        cadastrarMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarConvenioActionPerformed(evt);
+                cadastrarMedicoActionPerformed(evt);
             }
         });
 
-        empresaNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        empresaNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empresaNomeActionPerformed(evt);
-            }
-        });
+        nomeMedico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("CNPJ:");
+        jLabel3.setText("Cod. Especialidade: ");
 
-        Cnpj.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        codEspecialidade.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("Telefone:");
+        jLabel4.setText("CRM: ");
 
-        telefone.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        crm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,28 +98,27 @@ public class CadastroConvenio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(Cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(empresaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(352, 352, 352)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(425, 425, 425)
-                        .addComponent(cadastrarConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addComponent(cadastrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(crm)
+                            .addComponent(nomeMedico)
+                            .addComponent(codEspecialidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,19 +126,19 @@ public class CadastroConvenio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(70, 70, 70)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(empresaNome)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomeMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(crm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                .addComponent(cadastrarConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -188,80 +183,73 @@ public class CadastroConvenio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu9MouseClicked
 
-    private void cadastrarConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarConvenioActionPerformed
-               
-        if(verificaConvenio()){
-            convenio.setNomeConvenio(empresaNome.getText());
-            convenio.setCNPJ(Cnpj.getText());
-            convenio.setTelefone(telefone.getText());
-            
+    private void cadastrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarMedicoActionPerformed
+         if(verificaDadosMedicos()){
+            medico.setNomeMedico(nomeMedico.getText());
+            String cod = String.valueOf(codEspecialidade.getText());
+            medico.setCodigoEspecialidade(Integer.valueOf(cod));
+            medico.setCRM(crm.getText());            
+    
             try{
-                ConexaoBancoDeDados conexao = new ConexaoBancoDeDados();
-                Convenios conv = new Convenios();
-                
-                if(conexao.abrirConexao()){
-                    conv.configurarConexao(conexao.obterConexao());
-                    if(conv.inserirRegistro(convenio)){                                    
-                        JOptionPane.showMessageDialog(null, "Convenio" +
-                          " cadastrado com sucesso."); 
-                    }else{
-                        JOptionPane.showMessageDialog(null, ""
-                        + "Não foi possivel cadastrar o convênio.", "Alerta", 
-                        
-                        
-                         ERROR_MESSAGE);
-                    }
-                    conexao.fecharConexao();
-                }else{
-                        JOptionPane.showMessageDialog(null, ""
-                        + "Não foi possivel estabelecer conexão com o banco de dados!"
-                        , "Alerta", ERROR_MESSAGE);
-                }
-            }catch(Exception erro){
-                erro.printStackTrace();
-                JOptionPane.showMessageDialog(null, ""
-                + "Erro do sistema: processo de cadastro de convênio."
-                , "Alerta", ERROR_MESSAGE);
-            }  
-        }
-        
-    }//GEN-LAST:event_cadastrarConvenioActionPerformed
+                   ConexaoBancoDeDados conexao = new ConexaoBancoDeDados();
+                   Medicos med = new Medicos();
 
-    private void empresaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empresaNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_empresaNomeActionPerformed
+                   if(conexao.abrirConexao()){
+                       med.configurarConexao(conexao.obterConexao());
+                       if(med.inserirRegistro(medico)){                                    
+                           JOptionPane.showMessageDialog(null, "Médico "
+                            + medico.getNomeMedico()+ " cadastrado com sucesso."); 
+                       }else{
+                           JOptionPane.showMessageDialog(null, ""
+                           + "Não foi possivel cadastrar o médico", "Alerta", 
+                            ERROR_MESSAGE);
+                       }
+                       conexao.fecharConexao();
+                   }else{
+                           JOptionPane.showMessageDialog(null, ""
+                           + "Não foi possivel estabelecer conexão com o banco de dados!"
+                           , "Alerta", ERROR_MESSAGE);
+                   }
+           }catch(Exception erro){
+               erro.printStackTrace();
+               JOptionPane.showMessageDialog(null, ""
+               + "Erro do sistema: processo de cadastro de médico"
+               , "Alerta", ERROR_MESSAGE);
+           } 
+        }
+    }//GEN-LAST:event_cadastrarMedicoActionPerformed
 
     private void jMenu9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu9ActionPerformed
-        new TelaInicial().setVisible(true);
+        new TelaInicial().setVisible(true);       
     }//GEN-LAST:event_jMenu9ActionPerformed
 
     private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu10ActionPerformed
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_jMenu10ActionPerformed
-
-    
-    public boolean verificaConvenio(){
-        if (empresaNome.getText().isBlank() || empresaNome.getText().isEmpty()) {
+     
+            
+     public boolean verificaDadosMedicos(){
+        if (nomeMedico.getText().isBlank() || nomeMedico.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo "
-                    + "Nome é obrigatório e deve ser preenchido!", "Alerta",
-                    ERROR_MESSAGE);  
-            return false;
-        }    
-        if (Cnpj.getText().isBlank() || Cnpj.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Campo "
-                    + "CNPJ é obrigatório e deve ser preenchido!", "Alerta",
+                    + "nome é obrigatório e deve ser preenchido!", "Alerta",
                     ERROR_MESSAGE);  
             return false;
         }
-        if (telefone.getText().isBlank() || telefone.getText().isEmpty()) {
+        if (codEspecialidade.getText().isBlank() || codEspecialidade.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo "
-                    + "Telefone é obrigatório e deve ser preenchido!", "Alerta",
-                    ERROR_MESSAGE);  
+                    + "especialidade é obrigatório e deve ser preenchido!", "Alerta", 
+                    ERROR_MESSAGE);
+            return false;
+        }
+        
+        if (crm.getText().isBlank() || crm.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Campo "
+                    + "CRM é obrigatório e deve ser preenchido!", "Alerta", 
+                    ERROR_MESSAGE);
             return false;
         }
         return true;
     }
-  
     /**
      * @param args the command line arguments
      */
@@ -279,13 +267,13 @@ public class CadastroConvenio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroConvenio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -323,15 +311,15 @@ public class CadastroConvenio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroConvenio().setVisible(true);
+                new AlterarMedico().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Cnpj;
-    private java.awt.Button cadastrarConvenio;
-    private javax.swing.JTextField empresaNome;
+    private java.awt.Button cadastrarMedico;
+    private javax.swing.JTextField codEspecialidade;
+    private javax.swing.JTextField crm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -340,6 +328,6 @@ public class CadastroConvenio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField telefone;
+    private javax.swing.JTextField nomeMedico;
     // End of variables declaration//GEN-END:variables
 }
